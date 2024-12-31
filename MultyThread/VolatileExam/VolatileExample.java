@@ -18,8 +18,10 @@ public class VolatileExample {
     }
 
     public void run() {
+        int i = 0;
         while (running) {
-            // Выполнение задачи
+            i++;
+            System.out.println(i);
         }
     }
 

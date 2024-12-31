@@ -10,8 +10,10 @@ public class AtomicBooleanExample {
     }
 
     public void run() {
+        int i = 0;
         while (running.get()) {
-            // Выполнение задачи
+            i++;
+            System.out.println(i);
         }
     }
 

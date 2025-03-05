@@ -1,3 +1,5 @@
+import java.util.List;
+
 /*Шаблон Дана строка, содержащая буквы //A-Z//: "AAAABBBCCXYZDDDDEEEFFFAAAAAABBBBBBBBBBBBBBBBBBBBBBBBBBBB"
 Нужно написать функцию RLE, которая выведет строку вида: "A4B3C2XYZD4E3F3A6B28"
 Еще надо выдавать ошибку, если на ввод приходит недопустимая строка
@@ -13,7 +15,22 @@ public class YandexTask {
         } catch (IllegalArgumentException e) {
             System.err.println(e.getMessage());
         }
+
+        final List<String> list = List.of("dog", "cat", "hamster");
+        list.stream()
+                .filter(s -> {
+                    System.out.println("filter: " + s);
+                    return s.length() <= 3;
+                })
+                .map(s1 -> {
+                    System.out.println("map: " + s1);
+                    return s1.toUpperCase();
+                })
+                .sorted()
+                .forEach(x -> System.out.println("forEach: " + x));
     }
+
+
     public static String RLE(String str) {
         if (str == null || str.isEmpty()) {
             throw new IllegalArgumentException("Input string cannot be null or empty");
